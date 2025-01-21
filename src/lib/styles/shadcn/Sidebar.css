@@ -6,6 +6,10 @@
     @apply min-w-12;
 }
 
+.sidebar-variant-default .tooltip {
+    @apply hidden;
+}
+
 .sidebar-menu {
     @apply flex w-full min-w-0 flex-col gap-2 p-2;
 }

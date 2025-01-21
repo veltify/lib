@@ -21,6 +21,7 @@
 	import SidebarItem from '$lib/components/Sidebar/SidebarItem.svelte';
 	import Sidebar from '$lib/components/Sidebar/Sidebar.svelte';
 	import BaseIcon from '$lib/components/BaseIcon.svelte';
+	import Tooltip from '$lib/components/Tooltip.svelte';
 
 	const icons = {
 		lucideCirclePlus: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8m-4-4v8"/></g></svg>',
@@ -186,6 +187,15 @@
 		</Sidebar>
 		
 	</Preview>
+
+
+	<Preview title="Tooltip">
+		<Button>Open Tooltip</Button>
+		<Tooltip placement="top">
+			Hello World!
+		</Tooltip>
+	</Preview>
+
 
 	<Preview title="Dropdown">
 		<Button>Open Dropdown</Button>

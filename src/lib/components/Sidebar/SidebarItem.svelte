@@ -1,5 +1,6 @@
 <script>
 	import Base from "../Base.svelte";
+	import Tooltip from "../Tooltip.svelte";
 
     let {active = false, href, name, icon, children, ...restProps} = $props();
 
@@ -20,6 +21,8 @@
         </Base>
         <Base baseProps={{tag: 'span', name: 'sidebar-item-text'}}>{name}</Base>
     </Base>
+    <Tooltip placement="right">{name}</Tooltip>
+
     <!-- <button
         data-sidebar="menu-action"
         class="text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer-hover/menu-button:text-sidebar-accent-foreground [&amp;>svg]:size-4 [&amp;>svg]:shrink-0 peer-data-[active=true]/menu-button:text-sidebar-accent-foreground absolute right-1 top-1.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-none transition-transform after:absolute after:-inset-2 focus-visible:ring-2 group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 group-data-[collapsible=icon]:hidden peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 md:opacity-0 after:md:hidden"

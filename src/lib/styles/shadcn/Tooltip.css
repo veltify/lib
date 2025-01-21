@@ -1,0 +1,6 @@
+.tooltip {
+    @apply opacity-0 absolute invisible z-50 px-2 py-1 text-sm font-medium text-base-100 bg-content rounded-lg shadow-sm transition-opacity duration-200;
+}
+.tooltip-open {
+    @apply opacity-100 visible;
+}
