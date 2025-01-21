@@ -1,5 +1,16 @@
 # lib
 
+## 0.2.0
+
+### Minor Changes
+
+- c79bc51: Add Card, Carousel, Accordion and Sidebar components
+- 1ee079f: Add Tooltip
+
+### Patch Changes
+
+- 8e7ef82: Fix package list file
+
 ## 0.1.2
 
 ### Patch Changes
