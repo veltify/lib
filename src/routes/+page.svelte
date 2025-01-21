@@ -13,6 +13,14 @@
 	import ModalContent from '$lib/components/Modal/ModalContent.svelte';
 	import DropdownItem from '$lib/components/Dropdown/DropdownItem.svelte';
 	import DropdownMenu from '$lib/components/Dropdown/DropdownMenu.svelte';
+	import Carousel from '$lib/components/Carousel/Carousel.svelte';
+	import CarouselSlide from '$lib/components/Carousel/CarouselSlide.svelte';
+	import Accordion from '$lib/components/Accordion/Accordion.svelte';
+	import AccordionItem from '$lib/components/Accordion/AccordionItem.svelte';
+	import SidebarMenu from '$lib/components/Sidebar/SidebarMenu.svelte';
+	import SidebarItem from '$lib/components/Sidebar/SidebarItem.svelte';
+	import Sidebar from '$lib/components/Sidebar/Sidebar.svelte';
+	import BaseIcon from '$lib/components/BaseIcon.svelte';
 
 	const icons = {
 		lucideCirclePlus: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8m-4-4v8"/></g></svg>',
@@ -99,6 +107,86 @@
 		
 	</Preview>
 
+	<Preview title="Carousel">
+		<Carousel showDots dotCount={3}>
+			<CarouselSlide>
+				<div class="flex items-center justify-center py-2xl border border-base-300 bg-base-100 text-content text-4xl">
+					Slide 1
+				</div>
+			</CarouselSlide>
+			<CarouselSlide>
+				<div class="flex items-center justify-center py-2xl border border-base-300 bg-base-100 text-content text-4xl">
+					Slide 2
+				</div>
+			</CarouselSlide>
+			<CarouselSlide>
+				<div class="flex items-center justify-center py-2xl border border-base-300 bg-base-100 text-content text-4xl">
+					Slide 3
+				</div>
+			</CarouselSlide>
+		</Carousel>
+		
+	</Preview>
+	<Preview title="Accordion">
+		<Accordion>
+			<AccordionItem title="Item 1">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta consectetur, quo hic sit, dolorum, vel a corporis suscipit cum eius recusandae expedita facere itaque ut fuga distinctio excepturi praesentium.
+			</AccordionItem>
+			<AccordionItem title="Item 2">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta consectetur, quo hic sit, dolorum, vel a corporis suscipit cum eius recusandae expedita facere itaque ut fuga distinctio excepturi praesentium.
+			</AccordionItem>
+			<AccordionItem title="Item 3">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta consectetur, quo hic sit, dolorum, vel a corporis suscipit cum eius recusandae expedita facere itaque ut fuga distinctio excepturi praesentium.
+			</AccordionItem>
+		</Accordion>
+		
+	</Preview>
+
+	<Preview title="Sidebar">
+		<Sidebar variant="icon">
+			<SidebarMenu>
+				<SidebarItem name="Item 1" href="/item-1">
+					{#snippet icon()}
+						<BaseIcon name="lucideCirclePlus" {icons} size="sm"/>
+					{/snippet}
+				</SidebarItem>
+				<SidebarItem name="Item 2" href="/item-2">
+					{#snippet icon()}
+						<BaseIcon name="lucideCirclePlus" {icons} size="sm"/>
+					{/snippet}
+				</SidebarItem>
+				<SidebarItem name="Item 3" href="/item-3">
+					{#snippet icon()}
+						<BaseIcon name="lucideCirclePlus" {icons} size="sm"/>
+					{/snippet}
+				</SidebarItem>
+	
+			</SidebarMenu>
+		</Sidebar>
+		
+		<Sidebar variant="default">
+			<SidebarMenu>
+				<SidebarItem name="Item 1" href="/item-1">
+					{#snippet icon()}
+						<BaseIcon name="lucideCirclePlus" {icons} size="sm"/>
+					{/snippet}
+				</SidebarItem>
+				<SidebarItem name="Item 2" href="/item-2">
+					{#snippet icon()}
+						<BaseIcon name="lucideCirclePlus" {icons} size="sm"/>
+					{/snippet}
+				</SidebarItem>
+				<SidebarItem name="Item 3" href="/item-3">
+					{#snippet icon()}
+						<BaseIcon name="lucideCirclePlus" {icons} size="sm"/>
+					{/snippet}
+				</SidebarItem>
+	
+			</SidebarMenu>
+		</Sidebar>
+		
+	</Preview>
+
 	<Preview title="Dropdown">
 		<Button>Open Dropdown</Button>
 		<DropdownMenu>
@@ -129,8 +217,17 @@
 		<Icon {icons} name="lucideCirclePlus" />
 		<Icon {icons} name="tablerAlien" />
 		<Icon {icons} name="lucideSunMedium" />
-		<Icon {icons} class="w-10 h-10" name="lucideSunMedium" />
-		<Icon {icons} class="w-20 h-20 text-orange-500" name="lucideSunMedium" />
+		<Icon {icons} size="lg" name="lucideSunMedium" />
+		<Icon {icons} size="2xl" class="text-orange-500" name="lucideSunMedium" />
+		<br/>
+		<Icon {icons} size="xs" name="lucideSunMedium" />
+		<Icon {icons} size="sm" name="lucideSunMedium" />
+		<Icon {icons} size="md" name="lucideSunMedium" />
+		<Icon {icons} size="lg" name="lucideSunMedium" />
+		<Icon {icons} size="xl" name="lucideSunMedium" />
+		<Icon {icons} size="2xl" name="lucideSunMedium" />
+		<Icon {icons} size="3xl" name="lucideSunMedium" />
+		<Icon {icons} size="4xl" name="lucideSunMedium" />
 		<br/>
 
 		<span>You should create your own icon component for your project and define icons in $lib/icons.ts file</span>

@@ -59,6 +59,7 @@
 	"dependencies": {
 		"@changesets/cli": "^2.27.9",
 		"@floating-ui/dom": "^1.6.12",
+		"@glidejs/glide": "^3.7.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15"

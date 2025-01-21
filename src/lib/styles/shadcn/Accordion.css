@@ -1,0 +1,19 @@
+.accordion {
+
+}
+
+.accordion-item {
+    @apply border-b border-base-300 py-1 transition-all duration-300 ease-in-out;
+}
+
+.accordion-item-header {
+    @apply px-4 py-2 flex w-full cursor-pointer items-center justify-between text-start font-medium text-muted outline-none hover:text-content;
+}
+
+.accordion-item-body {
+    @apply px-4 h-0 overflow-hidden text-muted opacity-0 text-base leading-relaxed;
+}
+
+.accordion-item-body-open {
+    @apply h-auto opacity-100;
+}

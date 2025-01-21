@@ -1,0 +1,35 @@
+.sidebar {
+    @apply min-w-60 w-0 bg-base-100 border-e border-base-300;
+}
+
+.sidebar-variant-icon {
+    @apply min-w-12;
+}
+
+.sidebar-menu {
+    @apply flex w-full min-w-0 flex-col gap-2 p-2;
+}
+
+.sidebar-item-link {
+    @apply p-2 inline-flex gap-2 hover:bg-base-300/50 rounded w-full;
+}
+
+.sidebar-item-icon {
+    @apply flex items-center justify-center;
+}
+
+.sidebar-item-link-active {
+    @apply bg-gray-200;
+}
+
+.sidebar-variant-icon .sidebar-item {
+    @apply w-8 h-8;
+}
+
+.sidebar-variant-icon .sidebar-item-link {
+    @apply flex items-center justify-center;
+}
+
+.sidebar-variant-icon .sidebar-item-text {
+    @apply hidden;
+}

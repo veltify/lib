@@ -1,12 +1,14 @@
 <script>
 	import Base from "./Base.svelte";
 
-    let {icons = {}, name, ...restProps} = $props();
+    let {icons = {}, name, size = 'md', ...restProps} = $props();
 
     let baseProps = $derived({
         restProps,
         name: 'base-icon',
+        tag: 'span',
         css: {
+            size
             //
         }
     })

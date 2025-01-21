@@ -1,0 +1,7 @@
+.card {
+    @apply rounded-lg border border-base-300 shadow-md;
+}
+
+.card-body {
+    @apply p-4;
+}

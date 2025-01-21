@@ -1,11 +1,21 @@
 // Reexport your entry components here
 //
+export {default as Accordion} from './components/Accordion/Accordion.svelte'
+export {default as AccordionItem} from './components/Accordion/AccordionItem.svelte'
+export {default as Card} from './components/Card/Card.svelte'
+export {default as CardBody} from './components/Card/CardBody.svelte'
+export {default as Carousel} from './components/Carousel/Carousel.svelte'
+export {default as CarouselItem} from './components/Carousel/CarouselItem.svelte'
+
 export {default as Badge} from './components/Badge.svelte'
 export {default as Alert} from './components/Alert.svelte'
 export {default as Button} from './components/Button.svelte'
 export {default as BaseIcon} from './components/BaseIcon.svelte'
 export {default as DropdownMenu} from './components/Dropdown/DropdownMenu.svelte'
 export {default as DropdownItem} from './components/Dropdown/DropdownItem.svelte'
+export {default as Sidebar} from './components/Sidebar/Sidebar.svelte'
+export {default as SidebarMenu} from './components/Sidebar/SidebarMenu.svelte'
+export {default as SidebarItem} from './components/Sidebar/SidebarItem.svelte'
 export {default as Tabs} from './components/Tabs/Tabs.svelte'
 export {default as TabPanel} from './components/Tabs/TabPanel.svelte'
 export {default as TabItem} from './components/Tabs/TabItem.svelte'
