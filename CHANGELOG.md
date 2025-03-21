@@ -1,5 +1,11 @@
 # lib
 
+## 0.3.0
+
+### Minor Changes
+
+- ab557a5: Add file and mongodb databases
+
 ## 0.2.0
 
 ### Minor Changes
