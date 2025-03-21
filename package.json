@@ -5,7 +5,7 @@
 		"access": "public"
 	},
 	"repository": {
-		"url": "https://github.com/NightOwls0/lib"
+		"url": "https://github.com/veltify/lib"
 	},
 	"scripts": {
 		"dev": "vite dev",
