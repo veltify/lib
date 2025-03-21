@@ -1,5 +1,12 @@
 # lib
 
+## 0.3.1
+
+### Patch Changes
+
+- 1281be5: update
+- a72bccb: fix package
+
 ## 0.3.0
 
 ### Minor Changes
