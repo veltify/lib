@@ -1,45 +1,47 @@
-@layer base {
-	:root {
-		--base-100: 0 0% 96.08%;
-		--base-200: 0 0% 100%;
-		--base-300: 220 13.04% 85.98%;
-		--base-400: 216 5.88% 66.67%;
-		--content: 215 27.91% 16.86%;
-		--muted: 210 11.88% 39.61%;
-		--primary: 201.3 96.3% 32.2%;
-		--primary-base: 198.6 88.7% 48.4%;
-		--primary-content: 0 0% 100%;
-		--primary-hover: 201 90% 27.5%;
-	}
+@theme {
+	--spacing-xs: calc(4px * var(--scale));
+	--spacing-sm: calc(8px * var(--scale));
+	--spacing-md: calc(12px * var(--scale));
+	--spacing-lg: calc(16px * var(--scale));
+	--spacing-xl: calc(20px * var(--scale));
+	--spacing-2xl: calc(24px * var(--scale));
+	--spacing-3xl: calc(28px * var(--scale));
+	--spacing-4xl: calc(32px * var(--scale));
+	--spacing-5xl: calc(48px * var(--scale));
+	--spacing-6xl: calc(64px * var(--scale));
 
-	.dark {
-		--base-100: 214.74 30.16% 12.35%;
-		--base-200: 215 27.91% 16.86%;
-		--base-300: 216 27.56% 26.9%;
-		--base-400: 214.29 5.36% 37.51%;
-		--content: 0 0% 98%;
-		--muted: 210 6.67% 64.71%;
-		--primary: 202 80.3% 23.9%;
-		--primary-base: 198.6 88.7% 48.4%;
-		--primary-content: 0 0% 100%;
-		--primary-hover: 204 80.2% 19.9%;
-	}
-
-	:root {
-		--scale: 1;
-		--space-1: calc(4px * var(--scale));
-		--space-2: calc(8px * var(--scale));
-		--space-3: calc(12px * var(--scale));
-		--space-4: calc(16px * var(--scale));
-		--space-5: calc(20px * var(--scale));
-		--space-6: calc(24px * var(--scale));
-		--space-7: calc(28px * var(--scale));
-		--space-8: calc(32px * var(--scale));
-		--space-9: calc(48px * var(--scale));
-		--space-10: calc(64px * var(--scale));
-	}
+	--color-base-100: hsl(0 0% 96.08%);
+	--color-base-200: hsl(0 0% 100%);
+	--color-base-300: hsl(220 13.04% 85.98%);
+	--color-base-400: hsl(216 5.88% 66.67%);
+	--color-content: hsl(215 27.91% 16.86%);
+	--color-muted: hsl(210 11.88% 39.61%);
+	--color-primary: hsl(198.6 88.7% 48.4%);
+	--color-primary-base: hsl(201.3 96.3% 32.2%);
+	--color-primary-content: hsl(0 0% 100%);
+	--color-primary-hover: hsl(201 90% 27.5%);
 }
 
-.dark, :has(.dark) {
+
+.dark {
+	--color-base-100: hsl(214.74 30.16% 12.35%);
+	--color-base-200: hsl(215 27.91% 16.86%);
+	--color-base-300: hsl(216 27.56% 26.9%);
+	--color-base-400: hsl(214.29 5.36% 37.51%);
+	--color-content: hsl(0 0% 98%);
+	--color-muted: hsl(210 6.67% 64.71%);
+	--color-primary: hsl(198.6 88.7% 48.4%);
+	--color-primary-base: hsl(202 80.3% 23.9%);
+	--color-primary-hover: hsl(204 80.2% 19.9%);
+	--color-primary-content: hsl(0 0% 100%);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+	@apply bg-base-100 text-content;
+}
+
+.dark {
 	color-scheme: dark;
 }

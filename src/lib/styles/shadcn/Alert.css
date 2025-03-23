@@ -1,5 +1,5 @@
 .alert {
-    @apply relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-black dark:[&>svg]:text-white;
+    @apply relative w-full rounded-lg border border-base-300 p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-content;
 }
 
 .alert-title {
@@ -11,7 +11,7 @@
 }
 
 .alert-variant-default {
-    @apply bg-white text-black;
+    @apply bg-base-200 text-content;
 }
 
 .alert-variant-destructive {
