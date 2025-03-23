@@ -1,0 +1,14 @@
+.form-field {
+    @apply mb-4 flex w-full flex-col gap-1;
+}
+.form-field-error {
+    @apply h-4 text-xs text-danger;
+}
+
+.form-field-label {
+    @apply text-sm text-content/80;
+}
+
+.form-field-invalid .form-field-label {
+    @apply text-danger;
+}

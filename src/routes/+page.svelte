@@ -22,6 +22,11 @@
 	import Sidebar from '$lib/components/Sidebar/Sidebar.svelte';
 	import BaseIcon from '$lib/components/BaseIcon.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
+	import FormField from '$lib/components/FormField.svelte';
+	import Input from '$lib/components/Input.svelte';
+	import Select from '$lib/components/Select.svelte';
+	import Textarea from '$lib/components/Textarea.svelte';
+	import RichTextEditor from '$lib/components/RichTextEditor.svelte';
 
 	const icons = {
 		lucideCirclePlus: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8m-4-4v8"/></g></svg>',
@@ -38,6 +43,8 @@
 		modalOpen = true
 	}
 
+
+	let username = $state('')
 </script>
 
 <div class="container mx-auto px-4 py-8">
@@ -194,6 +201,44 @@
 		<Tooltip placement="top">
 			Hello World!
 		</Tooltip>
+	</Preview>
+
+
+	<Preview title="Input">
+		<FormField label="Username">
+			<Input name="username" bind:value={username}/>
+		</FormField>
+		<FormField required error="This field is required" label="Username">
+			<Input name="username" bind:value={username}/>
+		</FormField>
+		{username}
+	</Preview>
+
+
+	<Preview title="Select">
+		<FormField label="Username">
+			<Select name="username" bind:value={username}>
+				<option value="1">One</option>
+				<option value="2">two</option>
+				<option value="3">three</option>
+			</Select>
+		</FormField>
+		{username}
+	</Preview>
+
+
+	<Preview title="Textarea">
+		<FormField label="Username">
+			<Textarea name="username" bind:value={username} />
+		</FormField>
+		{username}
+	</Preview>
+
+	<Preview title="RichTextEditor">
+		<FormField label="Username">
+			<RichTextEditor name="username" bind:value={username} />
+		</FormField>
+		{username}
 	</Preview>
 
 

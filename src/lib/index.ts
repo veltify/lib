@@ -9,6 +9,13 @@ export {default as CarouselItem} from './components/Carousel/CarouselItem.svelte
 
 export {default as Badge} from './components/Badge.svelte'
 export {default as Alert} from './components/Alert.svelte'
+
+export {default as FormField} from './components/FormField.svelte'
+export {default as Input} from './components/Input.svelte'
+export {default as Select} from './components/Select.svelte'
+export {default as Textarea} from './components/Textarea.svelte'
+export {default as RichTextEditor} from './components/RichTextEditor.svelte'
+
 export {default as Button} from './components/Button.svelte'
 export {default as BaseIcon} from './components/BaseIcon.svelte'
 export {default as DropdownMenu} from './components/Dropdown/DropdownMenu.svelte'

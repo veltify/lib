@@ -74,6 +74,15 @@
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15",
 		"@tailwindcss/vite": "^4.0.15",
+		"@tiptap/core": "^2.11.5",
+		"@tiptap/extension-bubble-menu": "^2.11.5",
+		"@tiptap/extension-color": "^2.11.5",
+		"@tiptap/extension-highlight": "^2.11.5",
+		"@tiptap/extension-image": "^2.11.5",
+		"@tiptap/extension-link": "^2.11.5",
+		"@tiptap/extension-text-align": "^2.11.5",
+		"@tiptap/extension-underline": "^2.11.5",
+		"@tiptap/starter-kit": "^2.11.5",
 		"nanoid": "^5.1.5",
 		"tailwindcss": "^4.0.15"
 	}
