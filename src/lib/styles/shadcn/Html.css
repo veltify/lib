@@ -1,0 +1,81 @@
+.html {
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    @apply max-w-5xl;
+}
+.html h1 {
+	@apply mb-4 text-3xl font-bold md:text-4xl;
+}
+
+.html h2 {
+	@apply mb-3 text-2xl font-bold md:text-3xl;
+}
+
+.html h3 {
+	@apply mb-2 text-xl font-bold md:text-2xl;
+}
+
+.html h4,
+.html h5,
+.html h6 {
+	@apply mb-2 text-lg font-bold md:text-xl;
+}
+
+.html p {
+	@apply mb-4 leading-relaxed;
+}
+
+.html a {
+	@apply text-blue-600 underline hover:text-blue-800;
+}
+
+.html ul {
+	@apply mb-4 list-inside list-disc;
+}
+
+.html ol {
+	@apply mb-4 list-inside list-decimal;
+}
+
+.html li {
+	@apply mb-1;
+}
+.html li p {
+	@apply contents;
+}
+
+.html blockquote {
+	@apply mb-4 border-l-4 border-base-300 pl-4 italic text-muted;
+}
+
+.html img {
+	@apply mb-4 rounded-lg shadow;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.html pre {
+	@apply mb-4 overflow-x-auto rounded-lg bg-base-300 p-4 font-mono text-primary dark:bg-base-200 dark:text-content;
+}
+
+.html code {
+	@apply rounded bg-base-300 px-1 font-mono text-primary dark:bg-base-200 dark:text-content;
+}
+
+.html table {
+	@apply mb-4 w-full border-collapse border border-base-300 text-sm;
+}
+
+.html th {
+	@apply border border-base-300 bg-gray-100 px-4 py-2 text-left font-medium;
+}
+
+.html td {
+	@apply border border-base-300 px-4 py-2;
+}
+
+.html hr {
+	@apply my-4 border-t border-base-300;
+}
