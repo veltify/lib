@@ -1,5 +1,5 @@
 .dropdown-menu {
-    @apply absolute top-0 left-0 min-w-[200px] rounded-md bg-white shadow-lg border border-gray-200 transition-all z-50;
+    @apply absolute top-0 left-0 min-w-[200px] rounded-md bg-white shadow-lg border border-base-300 border-gray-200 transition-all z-50;
     @apply opacity-0 transform scale-95 pointer-events-none;
 }
 

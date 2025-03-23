@@ -244,7 +244,7 @@
 
 		<br/>
 <span class="block pt-4 font-bold">$lib/components/Icon.svelte</span>
-		<pre class="rounded border border-gray-300 bg-gray-200 p-2"><code>{'<'}script lang="ts"{'>'}
+		<pre class="rounded border border-base-300 bg-base-200 p-2"><code>{'<'}script lang="ts"{'>'}
 	import {'{'} BaseIcon {'}'} from 'owls-lib'
 	import icons from '$lib/icons'
 
@@ -254,7 +254,7 @@
 {'<'}BaseIcon {'{'}...restProps{'}'} {'{'}icons{'}'} {'{'}name{'}'}/{'>'}</code></pre>
 
 <span class="block pt-4 font-bold">icons.ts</span>
-<pre class="rounded border border-gray-300 bg-gray-200 p-2"><code>export default {'{'}
+<pre class="rounded border border-base-300 bg-base-200 p-2"><code>export default {'{'}
 	nameOfIcon: '{'<'}svg{'>'}...{'<'}/svg{'}'}',
 	nameOfAnotherIcon: '{'<'}svg{'>'}...{'<'}/svg{'}'}',
 {'}'}</Preview>
