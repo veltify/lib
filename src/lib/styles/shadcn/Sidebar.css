@@ -23,7 +23,7 @@
 }
 
 .sidebar-item-link-active {
-    @apply bg-gray-200;
+    @apply bg-base-200;
 }
 
 .sidebar-variant-icon .sidebar-item {

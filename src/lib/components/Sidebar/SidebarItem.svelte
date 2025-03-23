@@ -2,7 +2,7 @@
 	import Base from "../Base.svelte";
 	import Tooltip from "../Tooltip.svelte";
 
-    let {active = false, href, name, icon, children, ...restProps} = $props();
+    let {active = false, href, name, icon, children = undefined, ...restProps} = $props();
 
     let baseProps = $derived({
         restProps,

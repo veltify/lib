@@ -20,6 +20,11 @@
 	--color-primary-base: hsl(201.3 96.3% 32.2%);
 	--color-primary-content: hsl(0 0% 100%);
 	--color-primary-hover: hsl(201 90% 27.5%);
+
+	--color-danger: hsl(2, 91%, 55%);
+	--color-danger-base: hsl(2, 73%, 42%);
+	--color-danger-content: hsl(0 0% 100%);
+	--color-danger-hover: hsl(2, 70%, 49%);
 }
 
 
@@ -34,6 +39,11 @@
 	--color-primary-base: hsl(202 80.3% 23.9%);
 	--color-primary-hover: hsl(204 80.2% 19.9%);
 	--color-primary-content: hsl(0 0% 100%);
+
+	--color-danger: hsl(2, 91%, 55%);
+	--color-danger-base: hsl(2, 73%, 42%);
+	--color-danger-content: hsl(0 0% 100%);
+	--color-danger-hover: hsl(2, 70%, 49%);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

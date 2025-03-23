@@ -1,3 +1,23 @@
 .carousel {
-    
+    @apply flex overflow-hidden rounded-lg shadow-md;
+}
+
+.carousel-item {
+    @apply flex-none w-full transition-transform duration-300 ease-in-out;
+}
+
+.carousel-control {
+    @apply absolute top-1/2 transform -translate-y-1/2 bg-base-200 text-content p-2 rounded-full shadow-lg;
+}
+
+.carousel-indicators {
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-2;
+}
+
+.carousel-indicator {
+    @apply w-2 h-2 bg-base-300 rounded-full;
+}
+
+.carousel-indicator-active {
+    @apply bg-primary;
 }

@@ -14,7 +14,7 @@
 	import DropdownItem from '$lib/components/Dropdown/DropdownItem.svelte';
 	import DropdownMenu from '$lib/components/Dropdown/DropdownMenu.svelte';
 	import Carousel from '$lib/components/Carousel/Carousel.svelte';
-	import CarouselSlide from '$lib/components/Carousel/CarouselSlide.svelte';
+	import CarouselItem from '$lib/components/Carousel/CarouselItem.svelte';
 	import Accordion from '$lib/components/Accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/Accordion/AccordionItem.svelte';
 	import SidebarMenu from '$lib/components/Sidebar/SidebarMenu.svelte';
@@ -110,21 +110,21 @@
 
 	<Preview title="Carousel">
 		<Carousel showDots dotCount={3}>
-			<CarouselSlide>
+			<CarouselItem>
 				<div class="flex items-center justify-center py-2xl border border-base-300 bg-base-100 text-content text-4xl">
-					Slide 1
+					Item 1
 				</div>
-			</CarouselSlide>
-			<CarouselSlide>
+			</CarouselItem>
+			<CarouselItem>
 				<div class="flex items-center justify-center py-2xl border border-base-300 bg-base-100 text-content text-4xl">
-					Slide 2
+					Item 2
 				</div>
-			</CarouselSlide>
-			<CarouselSlide>
+			</CarouselItem>
+			<CarouselItem>
 				<div class="flex items-center justify-center py-2xl border border-base-300 bg-base-100 text-content text-4xl">
-					Slide 3
+					Item 3
 				</div>
-			</CarouselSlide>
+			</CarouselItem>
 		</Carousel>
 		
 	</Preview>

@@ -1,5 +1,5 @@
 .button {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
     @apply cursor-pointer;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .button-variant-outline {
-    @apply border border-gray-300 bg-transparent hover:bg-gray-100;
+    @apply border border-base-300 bg-transparent hover:bg-base-100;
 }
 
 .button-variant-link {
@@ -24,7 +24,7 @@
 }
 
 .button-variant-destructive {
-    @apply bg-red-600 text-white hover:bg-red-600/80;
+    @apply bg-danger text-danger-content hover:bg-danger/80;
 }
 
 .button-size-default:not(.button-icon) {

@@ -15,5 +15,5 @@
 }
 
 .alert-variant-destructive {
-    @apply border-red-600/50 text-red-600 dark:border-red-600 [&>svg]:text-red-600;
+    @apply border-danger/50 text-danger [&>svg]:text-danger;
 }

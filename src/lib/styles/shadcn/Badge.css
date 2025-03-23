@@ -3,15 +3,15 @@
 }
 
 .badge-variant-primary {
-    @apply border-transparent bg-black text-white hover:bg-black/80;
+    @apply border-transparent bg-primary text-primary-content hover:bg-primary-hover;
 }
 
 .badge-variant-secondary {
-    @apply border-transparent bg-gray-300 text-black hover:bg-gray-300/80;
+    @apply border-transparent bg-base-300 text-content hover:bg-base-300/80;
 }
 
 .badge-variant-destructive {
-    @apply border-transparent bg-red-500 text-white hover:bg-red-500/80;
+    @apply border-transparent bg-danger text-danger-content hover:bg-danger-hover;
 }
 
 .badge-variant-outline {
