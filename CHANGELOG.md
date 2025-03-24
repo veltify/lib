@@ -1,5 +1,11 @@
 # lib
 
+## 0.3.2
+
+### Patch Changes
+
+- f4e9b77: fix package repository
+
 ## 0.3.1
 
 ### Patch Changes
