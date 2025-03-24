@@ -1,0 +1,5 @@
+---
+'veltify': patch
+---
+
+Add cli
