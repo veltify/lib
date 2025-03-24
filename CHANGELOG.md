@@ -1,5 +1,17 @@
 # lib
 
+## 0.1.0
+
+### Minor Changes
+
+- 7ee54ea: Update tailwind to v4
+- f082326: Add basic inputs
+
+### Patch Changes
+
+- ad53b88: Fix
+- a282e6d: Add cli
+
 ## 0.3.2
 
 ### Patch Changes
