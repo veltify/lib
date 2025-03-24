@@ -38,9 +38,9 @@
 			"style": "./dist/styles/shadcn/index.css",
 			"svelte": "./dist/index.js"
 		},
-		"./server": {
-			"types": "./dist/server/index.d.ts",
-			"import": "./dist/server/index.js"
+		"./db": {
+			"types": "./dist/db/index.d.ts",
+			"import": "./dist/db/index.js"
 		}
 	},
 	"peerDependencies": {
