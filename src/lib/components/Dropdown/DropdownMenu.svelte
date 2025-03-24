@@ -7,6 +7,7 @@
 	let {
 		children = undefined,
         placement = 'bottom-start',
+		autoclose = false,
 		open = $bindable(false),
 		...restProps
 	} = $props();
@@ -43,6 +44,10 @@
 	}
 
 	function onOutsideClick(e) {
+		if(autoclose && element?.contains(e.target)) {
+			open = false;
+		}
+
 		if (!element?.contains(e.target as Node) && !element.previousElementSibling?.contains(e.target as Node)) {
 			open = false;
 		}

@@ -1,0 +1,8 @@
+.select {
+    @apply block bg-base-200 w-full rounded-md border border-base-300 p-2 shadow-sm focus:border-primary/50 focus:outline-none focus:ring-3 focus:ring-primary/25 sm:text-sm;
+    /* @apply focus:border-primary/50 border-base-300 bg-base-200 w-full rounded border px-4 py-2 outline-none; */
+}
+
+.form-field-invalid .select {
+    @apply border-danger text-danger focus:ring-danger/25;
+}

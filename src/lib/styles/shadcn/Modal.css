@@ -3,18 +3,15 @@
 }
 
 .modal.modal-open {
-    /* @apply animate-in fade-in-0 */
     @apply opacity-100;
-
 }
 
 .modal:not(.modal-open) {
     @apply opacity-0 pointer-events-none;    
-    /* @apply animate-out fade-out-0; */
 }
 
 .modal-content {
-    @apply fixed transition-all left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white p-6 shadow-lg duration-200 sm:rounded-lg;
+    @apply fixed transition-all left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-base-300 bg-base-200 p-6 shadow-lg duration-200 sm:rounded-lg;
 }
 
 .modal.modal-open .modal-content {
@@ -35,7 +32,7 @@
 }
 
 .modal-open .modal-close-button {
-    @apply bg-gray-200 text-gray-500;
+    @apply bg-base-200 text-muted;
 }
 
 .modal-header {
@@ -46,7 +43,7 @@
 }
 
 .modal-body {
-    @apply text-sm text-gray-700;
+    @apply text-sm text-content;
 }
 
 .modal-footer {

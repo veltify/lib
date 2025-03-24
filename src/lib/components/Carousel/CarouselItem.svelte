@@ -6,7 +6,7 @@
     let baseProps = $derived({
         restProps,
         tag: 'li',
-        name: 'carousel-slide',
+        name: 'carousel-item',
         class: 'glide__slide',
         css: {
             //

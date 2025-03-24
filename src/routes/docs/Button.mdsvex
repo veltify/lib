@@ -1,0 +1,235 @@
+---
+title: Button Component
+layout: ../../lib/Preview.svelte
+---
+
+<script>
+  import Button from '$lib/components/Button.svelte';
+  import CodeExample from '$lib/components/CodeExample.svelte';
+</script>
+
+# Button
+
+## Overview
+The Button component is a versatile interactive element for user actions. It supports multiple variants and sizes to fit different design needs.
+
+## Installation
+
+```js
+import { Button } from '@veltify/ui';
+```
+
+## Examples
+
+### Basic Button
+
+<CodeExample
+  title="Basic Button"
+  code={`<Button>Click me</Button>`}
+>
+  <Button>Click me</Button>
+</CodeExample>
+
+### Button Variants
+
+<CodeExample
+  title="Button Variants"
+  code={`<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+<Button variant="destructive">Destructive</Button>`}
+>
+  
+</CodeExample>
+
+### Button Sizes
+
+<CodeExample
+  title="Button Sizes"
+  code={`<Button size="default">Default</Button>
+<Button size="sm">Small</Button>
+<Button size="icon">Icon</Button>`}
+>
+  <div class="flex flex-wrap items-center gap-2">
+    <Button size="default">Default</Button>
+    <Button size="sm">Small</Button>
+    <Button size="icon">I</Button>
+  </div>
+</CodeExample>
+
+### Link Button
+
+<CodeExample
+  title="Link Button"
+  code={`<Button href="https://example.com">Link Button</Button>`}
+>
+  <Button href="https://example.com">Link Button</Button>
+</CodeExample>
+
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'ghost' \| 'secondary' \| 'link' \| 'destructive'` | `'primary'` | Button style variant |
+| `size` | `'default' \| 'sm' \| 'icon'` | `'default'` | Size of the button |
+| `href` | `string` | `undefined` | When provided, renders as an anchor element |
+| `type` | `'button' \| 'submit'` | `'button'` | HTML button type attribute |
+| `icon` | `boolean` | `false` | Whether the button is an icon button |
+| `children` | `Snippet` | - | Button content |
+
+### Accessibility
+
+- Implements proper ARIA roles and attributes
+- Keyboard navigable
+- Focus states included for keyboard users
+- Screen reader compatible
+
+
+<!-- <script>
+  import Button from '$lib/components/Button.svelte';
+  import CodeExample from '$lib/components/CodeExample.svelte';
+</script>
+
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6">Button</h1>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+    <p class="mb-4">
+      The Button component is a versatile interactive element for user actions. 
+      It supports multiple variants and sizes to fit different design needs.
+    </p>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Installation</h2>
+    <pre class="bg-gray-100 p-4 rounded-md mb-4"><code>import { Button } from '@veltify/ui';</code></pre>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Examples</h2>
+    
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Basic Button</h3>
+      <CodeExample
+        title="Basic Button"
+        code={`<Button>Click me</Button>`}
+      >
+        <Button>Click me</Button>
+      </CodeExample>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Button Variants</h3>
+      <CodeExample
+        title="Button Variants"
+        code={`<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+<Button variant="destructive">Destructive</Button>`}
+      >
+        <div class="flex flex-wrap gap-2">
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="link">Link</Button>
+          <Button variant="destructive">Destructive</Button>
+        </div>
+      </CodeExample>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Button Sizes</h3>
+      <CodeExample
+        title="Button Sizes"
+        code={`<Button size="default">Default</Button>
+<Button size="sm">Small</Button>
+<Button size="icon">Icon</Button>`}
+      >
+        <div class="flex flex-wrap items-center gap-2">
+          <Button size="default">Default</Button>
+          <Button size="sm">Small</Button>
+          <Button size="icon">I</Button>
+        </div>
+      </CodeExample>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Link Button</h3>
+      <CodeExample
+        title="Link Button"
+        code={`<Button href="https://example.com">Link Button</Button>`}
+      >
+        <Button href="https://example.com">Link Button</Button>
+      </CodeExample>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">API Reference</h2>
+    
+    <h3 class="text-xl font-semibold mb-3">Props</h3>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse">
+        <thead>
+          <tr class="border-b">
+            <th class="py-2 px-4 text-left">Prop</th>
+            <th class="py-2 px-4 text-left">Type</th>
+            <th class="py-2 px-4 text-left">Default</th>
+            <th class="py-2 px-4 text-left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="py-2 px-4"><code>variant</code></td>
+            <td class="py-2 px-4"><code>'primary' | 'ghost' | 'secondary' | 'link' | 'destructive'</code></td>
+            <td class="py-2 px-4"><code>'primary'</code></td>
+            <td class="py-2 px-4">Button style variant</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2 px-4"><code>size</code></td>
+            <td class="py-2 px-4"><code>'default' | 'sm' | 'icon'</code></td>
+            <td class="py-2 px-4"><code>'default'</code></td>
+            <td class="py-2 px-4">Size of the button</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2 px-4"><code>href</code></td>
+            <td class="py-2 px-4"><code>string</code></td>
+            <td class="py-2 px-4"><code>undefined</code></td>
+            <td class="py-2 px-4">When provided, renders as an anchor element</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2 px-4"><code>type</code></td>
+            <td class="py-2 px-4"><code>'button' | 'submit'</code></td>
+            <td class="py-2 px-4"><code>'button'</code></td>
+            <td class="py-2 px-4">HTML button type attribute</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2 px-4"><code>icon</code></td>
+            <td class="py-2 px-4"><code>boolean</code></td>
+            <td class="py-2 px-4"><code>false</code></td>
+            <td class="py-2 px-4">Whether the button is an icon button</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2 px-4"><code>children</code></td>
+            <td class="py-2 px-4"><code>Snippet</code></td>
+            <td class="py-2 px-4">-</td>
+            <td class="py-2 px-4">Button content</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <h3 class="text-xl font-semibold mt-6 mb-3">Accessibility</h3>
+    <ul class="list-disc pl-6">
+      <li>Implements proper ARIA roles and attributes</li>
+      <li>Keyboard navigable</li>
+      <li>Focus states included for keyboard users</li>
+      <li>Screen reader compatible</li>
+    </ul>
+  </section>
+</div> -->

@@ -1,0 +1,82 @@
+.date-picker {
+  @apply relative w-full;
+}
+
+.date-picker-input {
+  @apply block bg-base-200 w-full rounded-md border border-base-300 p-2 shadow-sm focus:border-primary/50 focus:outline-none focus:ring-3 focus:ring-primary/25 sm:text-sm;
+  @apply cursor-pointer;
+}
+
+.date-picker-calendar {
+  @apply absolute z-50 mt-1 bg-base-200 rounded-md border border-base-300 shadow-lg;
+  @apply p-3;
+  max-width: 600px; /* Set max width to prevent wide menus */
+  width: max-content;
+}
+
+.date-picker-calendars {
+  @apply flex flex-col md:flex-row gap-4;
+}
+
+.date-picker-calendar-container {
+  @apply min-w-[250px];
+}
+
+.date-picker-header {
+  @apply flex items-center justify-between mb-2;
+}
+
+.date-picker-month-year {
+  @apply text-content font-medium;
+}
+
+.date-picker-nav-button {
+  @apply p-1 rounded-md text-content/70 hover:bg-base-300 hover:text-content;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/25;
+}
+
+.date-picker-weekdays {
+  @apply grid grid-cols-7 gap-1 mb-1;
+}
+
+.date-picker-weekday {
+  @apply text-xs text-center text-content/70 font-medium;
+}
+
+.date-picker-days {
+  @apply grid grid-cols-7 gap-1;
+}
+
+.date-picker-day {
+  @apply h-8 w-8 flex items-center justify-center rounded-md text-sm;
+  @apply hover:bg-base-300 focus:outline-none focus:ring-2 focus:ring-primary/25;
+}
+
+.date-picker-day-current-month {
+  @apply text-content;
+}
+
+.date-picker-day-other-month {
+  @apply text-content/40;
+}
+
+.date-picker-day-today {
+  @apply font-bold;
+}
+
+.date-picker-day-selected {
+  @apply bg-primary text-primary-content hover:bg-primary-hover;
+}
+
+.date-picker-day-in-range {
+  @apply bg-primary/20 text-content;
+}
+
+.date-picker-day-range-start, .date-picker-day-range-end {
+  @apply bg-primary text-primary-content hover:bg-primary-hover;
+}
+
+
+.form-field-invalid .date-picker-input {
+  @apply border-danger text-danger focus:ring-danger/25;
+}
