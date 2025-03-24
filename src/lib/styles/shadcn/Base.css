@@ -13,7 +13,7 @@
 	--color-base-100: hsl(0 0% 96.08%);
 	--color-base-200: hsl(0 0% 100%);
 	--color-base-300: hsl(220 13.04% 85.98%);
-	--color-base-400: hsl(216 5.88% 66.67%);
+	--color-base-400: hsl(216 5.88% 76.67%);
 	--color-content: hsl(215 27.91% 16.86%);
 	--color-muted: hsl(210 11.88% 39.61%);
 	--color-primary: hsl(198.6 88.7% 48.4%);
@@ -32,7 +32,7 @@
 	--color-base-100: hsl(214.74 30.16% 12.35%);
 	--color-base-200: hsl(215 27.91% 16.86%);
 	--color-base-300: hsl(216 27.56% 26.9%);
-	--color-base-400: hsl(214.29 5.36% 37.51%);
+	--color-base-400: hsl(216, 20%, 34%);
 	--color-content: hsl(0 0% 98%);
 	--color-muted: hsl(210 6.67% 64.71%);
 	--color-primary: hsl(198.6 88.7% 48.4%);

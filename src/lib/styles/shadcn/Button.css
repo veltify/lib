@@ -12,7 +12,7 @@
 }
 
 .button-variant-ghost {
-    @apply hover:bg-base-100 hover:text-content;
+    @apply hover:bg-base-100 text-content;
 }
 
 .button-variant-outline {

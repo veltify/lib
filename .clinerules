@@ -1,0 +1,65 @@
+# Veltify Project Rules
+
+## Component Structure
+- All components should extend the Base component for consistency
+- Use Svelte 5's `$props()` and `$derived` for props and computed values
+- Use `$bindable()` for two-way binding when needed
+- Use `{@render children()}` for rendering slots
+- Keep components focused on a single responsibility
+- Compound components should be organized in their own directories
+
+## Styling Patterns
+- Each component should have its own CSS file in src/lib/styles/shadcn/
+- Use the cls() helper function for generating class names
+- Follow the naming convention: [component]-[property]-[value]
+- Use theme variables for colors and spacing
+- Avoid hardcoded color values; use theme colors instead
+- Use Tailwind's @apply directive for composing utility classes
+
+## Theming System
+- Theme variables are defined in Base.css using the @theme directive
+- Dark mode variants are defined in the .dark selector
+- Color variables follow the pattern: --color-[purpose]-[variant]
+- Spacing variables follow the pattern: --spacing-[size]
+- Use CSS variables for all themeable properties
+
+## File Organization
+- Component files go in src/lib/components/
+- Complex components get their own directory with related components
+- CSS files go in src/lib/styles/shadcn/
+- Helper functions go in src/lib/helpers.ts
+- All components are exported from src/lib/index.ts
+
+## Naming Conventions
+- Component files use PascalCase (e.g., Button.svelte)
+- CSS files match component names (e.g., Button.css)
+- CSS classes use kebab-case (e.g., button-variant-primary)
+- Helper functions use camelCase (e.g., cls())
+
+## Code Style
+- Use TypeScript for type safety
+- Add JSDoc comments for complex functions
+- Keep components small and focused
+- Extract complex logic to helper functions
+- Use consistent indentation (2 spaces)
+
+## Accessibility
+- All interactive components must be keyboard accessible
+- Use appropriate ARIA attributes
+- Ensure sufficient color contrast
+- Support focus management for complex components
+- Test with screen readers
+
+## Development Workflow
+- Update the memory bank when making significant changes
+- Document new components and features
+- Keep the activeContext.md file updated with current work
+- Update progress.md when completing milestones
+- Test components in isolation before integration
+
+## Release Process
+- Update version in package.json
+- Update CHANGELOG.md with changes
+- Run build and tests before release
+- Tag releases in git
+- Publish to npm

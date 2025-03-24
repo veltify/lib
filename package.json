@@ -1,6 +1,6 @@
 {
-	"name": "owls-lib",
-	"version": "0.3.1",
+	"name": "veltify",
+	"version": "0.0.1",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -56,6 +56,7 @@
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"autoprefixer": "^10.4.20",
+		"mdsvex": "^0.12.3",
 		"mongodb": "^6.15.0",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
@@ -83,6 +84,8 @@
 		"@tiptap/extension-text-align": "^2.11.5",
 		"@tiptap/extension-underline": "^2.11.5",
 		"@tiptap/starter-kit": "^2.11.5",
+		"chart.js": "^4.4.8",
+		"mdsvexamples": "^0.5.0",
 		"nanoid": "^5.1.5",
 		"tailwindcss": "^4.0.15"
 	}

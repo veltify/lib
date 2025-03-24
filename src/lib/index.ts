@@ -30,3 +30,7 @@ export {default as TabHeader} from './components/Tabs/TabHeader.svelte'
 export {default as TabContent} from './components/Tabs/TabContent.svelte'
 export {default as Modal} from './components/Modal/Modal.svelte'
 export {default as ModalContent} from './components/Modal/ModalContent.svelte'
+export {default as ModalProvider} from './components/Modal/ModalProvider.svelte'
+export {default as DatePicker} from './components/DatePicker/DatePicker.svelte'
+
+export {modalStore} from './stores/modal'

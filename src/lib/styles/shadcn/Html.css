@@ -4,16 +4,17 @@
     margin-right: auto;
     @apply max-w-5xl;
 }
+
 .html h1 {
 	@apply mb-4 text-3xl font-bold md:text-4xl;
 }
 
 .html h2 {
-	@apply mb-3 text-2xl font-bold md:text-3xl;
+	@apply mb-3 text-xl font-bold md:text-2xl;
 }
 
 .html h3 {
-	@apply mb-2 text-xl font-bold md:text-2xl;
+	@apply mb-2 text-lg font-bold md:text-xl;
 }
 
 .html h4,
