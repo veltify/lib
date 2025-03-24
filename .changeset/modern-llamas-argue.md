@@ -1,5 +1,5 @@
 ---
-'owls-lib': minor
+'veltify': minor
 ---
 
 Update tailwind to v4

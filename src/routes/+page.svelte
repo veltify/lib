@@ -1,5 +1,137 @@
-<script lang="ts">
-	import Preview from '$lib/Preview.svelte';
+<script>
+	import { DropdownMenu, modalStore } from "$lib";
+	import { Button } from "$lib";
+	import Card from "$lib/components/Card/Card.svelte";
+	import CardBody from "$lib/components/Card/CardBody.svelte";
+	import { DatePicker, FormField, Alert, Badge } from "$lib";
+	import ColorPicker from "./ColorPicker.svelte";
+
+</script>
+
+
+<div
+	class="from-base-300 via-primary/20 to-base-300 flex items-center justify-center bg-gradient-to-b px-4 py-40"
+>
+	<div class="flex max-w-[500px] flex-col gap-8 text-center">
+		<h1 class="text-primary-hover text-8xl font-bold">Veltify UI</h1>
+		<p class="text-muted text-3xl">Modern Svelte + Tailwind UI Library</p>
+	</div>
+</div>
+<div class=" from-base-300 bg-gradient-to-b to-transparent">
+	<div class="container mx-auto flex px-4">
+		<div class="w-full flex flex-col gap-4">
+			<h2 class="text-3xl text-content text-center font-bold mb-8">Available components</h2>
+			<div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+				<a class="border rounded w-full border-base-300  bg-base-200 p-4 text-xl" href="/docs/alert">Alert</a>
+				<a class="border rounded w-full border-base-300  bg-base-200 p-4 text-xl" href="/docs/button">Button</a>
+				<a class="border rounded w-full border-base-300  bg-base-200 p-4 text-xl" href="/docs/badge">Badge</a>
+				<a class="border rounded w-full border-base-300  bg-base-200 p-4 text-xl" href="/docs/input">Input</a>
+				<a class="border rounded w-full border-base-300  bg-base-200 p-4 text-xl" href="/docs/select">Select</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="py-20 from-transparent bg-gradient-to-b to-base-100">
+	<div class="container mx-auto flex px-4">
+		<div class="w-full flex flex-col gap-4">
+			<h2 class="text-3xl text-content text-center font-bold mb-8">Theme system</h2>
+			<div class="flex flex-col sm:flex-row gap-4">
+				<div class="flex items-center flex-col gap-4">
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Base 100 (Background)</div>
+						<ColorPicker key="base-100"/>
+					</div>
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Base 200 (Cards)</div>
+						<ColorPicker key="base-200"/>
+	
+					</div>
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Base 300 (Border)</div>
+						<ColorPicker key="base-300"/>
+	
+					</div>
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Base 400</div>
+						<ColorPicker key="base-400"/>
+	
+					</div>
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Content (Texts)</div>
+						<ColorPicker key="content"/>
+	
+					</div>
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Muted (Secondary Texts)</div>
+						<ColorPicker key="muted"/>
+					</div>
+	
+	
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Primary</div>
+						<ColorPicker key="primary"/>
+					</div>
+	
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Primary Hover</div>
+						<ColorPicker key="primary-hover"/>
+					</div>
+	
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Primary Content</div>
+						<ColorPicker key="primary-content"/>
+					</div>
+	
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Danger</div>
+						<ColorPicker key="danger"/>
+					</div>
+	
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Danger Hover</div>
+						<ColorPicker key="danger-hover"/>
+					</div>
+	
+					<div class="flex gap-8 items-center">
+						<div class="text-2xl min-w-[280px]">Danger Content</div>
+						<ColorPicker key="danger-content"/>
+					</div>
+	
+	
+				</div>
+				<div>
+					<Button variant="primary">Primary</Button>
+					<Button variant="secondary">Secondary</Button>
+					<Button variant="destructive">Danger</Button>
+					<br/>
+					<br/>
+					<Card>
+						<CardBody>
+
+							<div class="text-2xl text-content">Card</div>
+							<div class="text-lg text-muted">Card body</div>
+						</CardBody>
+					</Card>
+					<br/>
+					<FormField label="Date">
+						<DatePicker />
+					</FormField>
+					<br/>
+					<Alert title="Danger">
+						This is alert
+					</Alert>
+					<br />
+					<div>
+						<Badge variant="primary">Primary</Badge>
+						<Badge variant="destructive">Danger</Badge>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <script lang="ts">
+	import Preview from '$lib/CodeBlock.svelte';
 	import Badge from '$lib/components/Badge.svelte';
 	import Alert from '$lib/components/Alert.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -362,7 +494,7 @@
 		<span class="block pt-4 font-bold">$lib/components/Icon.svelte</span>
 		<pre class="border-base-300 bg-base-200 rounded border p-2"><code
 				>{'<'}script lang="ts"{'>'}
-	import {'{'} BaseIcon {'}'} from 'owls-lib'
+	import {'{'} BaseIcon {'}'} from 'veltify'
 	import icons from '$lib/icons'
 
     let {'{'} name, ...restProps {'}'} = $props()
@@ -379,4 +511,4 @@
 {'}'}</code
 			></pre></Preview
 	>
-</div>
+</div> -->

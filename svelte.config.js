@@ -17,7 +17,7 @@ const config = {
 			},
 			remarkPlugins: [[examples, {
 				defaults: {
-					Wrapper: '/src/lib/Preview.svelte',
+					Wrapper: '/src/lib/CodeBlock.svelte',
 				}
 			}]],
 		})

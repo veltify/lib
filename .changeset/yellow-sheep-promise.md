@@ -1,5 +1,5 @@
 ---
-'owls-lib': minor
+'veltify': minor
 ---
 
 Add basic inputs

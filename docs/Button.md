@@ -5,7 +5,7 @@ The Button component is a basic UI element that responds to user interactions.
 ## Usage
 ```svelte
 <script>
-  import { Button } from 'owls-lib';
+  import { Button } from 'veltify';
 </script>
 
 <Button onclick={() => console.log('Button clicked')}>Click me</Button>

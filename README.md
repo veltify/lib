@@ -1,6 +1,6 @@
 # Library of useful components & Helpers
 
-![NPM Version](https://img.shields.io/npm/v/owls-lib)
+![NPM Version](https://img.shields.io/npm/v/veltify)
 
 
 ## Components
