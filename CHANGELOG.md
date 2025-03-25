@@ -1,5 +1,11 @@
 # lib
 
+## 0.1.2
+
+### Patch Changes
+
+- 9578fdb: Update indexeddb
+
 ## 0.1.1
 
 ### Patch Changes
