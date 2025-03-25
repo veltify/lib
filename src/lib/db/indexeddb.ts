@@ -2,6 +2,9 @@ import { getId, makeQuery, applyFilters } from './utils.js';
 import type { QueryParams } from './utils.js';
 
 export async function createIndexedDb({ name, version }: { name: string; version: number }) {
+  // should run only on client side
+  if(typeof indexedDB === 'undefined') return;
+  
   const openRequest = indexedDB.open(name, version);
 
   return new Promise<(collectionName: string) => any>((resolve, reject) => {
@@ -29,7 +32,7 @@ export async function createIndexedDb({ name, version }: { name: string; version
                   return { id, ...data, ...rest };
                 });
 
-                if (filters) results = results.filter(item => applyFilters(item, filters));
+                if (filters) results = applyFilters(results, filters);
 
                 if (sort) {
                   results.sort((a, b) => {

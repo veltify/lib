@@ -41,6 +41,14 @@
 		"./db": {
 			"types": "./dist/db/index.d.ts",
 			"import": "./dist/db/index.js"
+		},
+		"./db/client": {
+			"types": "./dist/db/client.d.ts",
+			"import": "./dist/db/client.js"
+		},
+		"./db/server": {
+			"types": "./dist/db/server.d.ts",
+			"import": "./dist/db/server.js"
 		}
 	},
 	"peerDependencies": {
