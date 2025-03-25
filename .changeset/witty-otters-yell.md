@@ -1,5 +1,0 @@
----
-'veltify': patch
----
-
-Update indexeddb
