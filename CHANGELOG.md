@@ -1,5 +1,16 @@
 # lib
 
+## 0.2.0
+
+### Minor Changes
+
+- 8fa5874: Add CMS components
+
+### Patch Changes
+
+- 054dde2: fix build issues
+- 763ec0d: add pnpm lock
+
 ## 0.1.2
 
 ### Patch Changes
