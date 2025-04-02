@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { applyAction, deserialize } from "$app/forms";
 	import { goto, invalidateAll } from "$app/navigation";
-	import { page } from "$app/state";
 	import type { ActionResult } from "@sveltejs/kit";
 
 	let {
@@ -10,7 +9,7 @@
 		onsubmit = undefined,
 		onsuccess = undefined,
 		children,
-		action = page.url.pathname + (mode == "default" ? "" : "?/" + mode),
+		action = (mode == "default" ? "" : "?/" + mode),
 		...restProps
 	} = $props();
 
