@@ -53,3 +53,21 @@ export default {
 		table: TableRichText,
 	}
 } as any;
+
+export {
+    FormInput,
+    FormTextarea,
+    FormSelect,
+    FormRichText,
+    FormPassword,
+    FormNumber,
+    FormRelation,
+    TableText,
+    TableBadge,
+    TableImg,
+    TableIcon,
+    TableRichText,
+    TableHidden,
+    TableDate,
+    TableRelation,
+}
