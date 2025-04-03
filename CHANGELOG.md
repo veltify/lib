@@ -1,5 +1,11 @@
 # lib
 
+## 0.2.2
+
+### Patch Changes
+
+- 7130c06: update styles
+
 ## 0.2.1
 
 ### Patch Changes
