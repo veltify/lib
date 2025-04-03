@@ -34,8 +34,7 @@
 			<button class="rounded bg-base-300 px-4 py-2 hover:bg-base-400" onclick={onclose}>
 				Cancel
 			</button>
-			<form method="POST" onsubmit={handleSubmit}>
-				<input type="hidden" name="mode" value="remove" />
+			<form method="POST" action="remove" onsubmit={handleSubmit}>
 				<input type="hidden" name="value" value={JSON.stringify({ id })} />
 				<button type="submit" class="rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700">
 					Delete
