@@ -11,7 +11,7 @@
 	class:pointer-events-none={!open}
 ></div>
 <div
-	class="fixed bottom-0 top-0 z-10 w-60 border bg-base-200 p-2 transition duration-500"
+	class="fixed bottom-0 top-0 z-10 w-60 border-e border-base-300 bg-base-200 p-2 transition duration-500"
 	class:-translate-x-full={!open}
 	class:left-0={open}
 >

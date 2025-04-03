@@ -14,7 +14,7 @@
 }
 
 .confirm-content {
-    @apply w-full max-w-md rounded-lg bg-white p-6 shadow-lg;
+    @apply w-full max-w-md rounded-lg bg-base-200 p-6 shadow-lg;
 }
 
 .confirm-content {
