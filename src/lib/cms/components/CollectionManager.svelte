@@ -11,10 +11,10 @@
 	let { data, form, fields }: any = $props();
 	let config = $derived(data.config);
 
-	let mode = $state('list');
+	let mode: any = $state(data.config.type == 'form' ? 'update' : 'list');
 
 	let confirmOpen = $state(false);
-	let current: any = $state(null);
+	let current: any = $state(data.config.type == 'form' ? data.value : null);
 
 	const icons = {
 		lucideCirclePlus:
@@ -32,22 +32,20 @@
 	}
 
 	function onsubmit(e) {
-		if (!e.data.errors) {
+		if (!e.data.errors && data.config.type != 'form') {
 			mode = 'list';
 		}
 	}
-
-	$effect(() => {
-		if (!confirmOpen) {
-			current = null;
-		}
-	});
 
 	let value = $state(form?.body ?? data.value ?? {});
 
 	$effect(() => {
 		value = form?.body ?? data.value ?? {};
 	});
+
+	let onback = data.config.type === 'form' ? undefined : () => {
+		mode = 'list'
+	}
 
 	function openEdit(item: any) {
 		current = item;
@@ -95,37 +93,17 @@
 
 			<DeleteConfirm bind:open={confirmOpen} id={current?.id} {onclose} />
 		</div>
-	{:else if mode === 'insert'}
+	{:else}
 		<div
 			class="absolute inset-0"
 			in:fly={{ x: 20, duration: 201 }}
 			out:fly={{ x: 20, duration: 201 }}
 		>
-			<PageHeader onback={() => (mode = 'list')} title="Add New {config.singular}" />
-
-			<DynamicForm
-				config={{
-					fields: config.fields,
-					form: config.form,
-					backUrl: `/admin/${config.name}`,
-					context: data.context
-				}}
-				{fields}
-				onsuccess={onsubmit}
-				oncancel={() => (mode = 'list')}
-				bind:value={current}
-				errors={form?.errors}
-				mode="insert"
-			/>
-		</div>
-	{:else if mode === 'update'}
-		<div
-			class="absolute inset-0"
-			in:fly={{ x: 20, duration: 201 }}
-			out:fly={{ x: 20, duration: 201 }}
-		>
-			<PageHeader onback={() => (mode = 'list')} title="Update {config.singular}" />
-
+			{#if mode == 'insert'}
+				<PageHeader {onback} title="Add New {config.singular}" />
+			{:else}
+				<PageHeader {onback} title="Update {config.singular}" />
+			{/if}
 			<DynamicForm
 				config={{
 					fields: config.fields,
@@ -134,10 +112,10 @@
 				}}
 				{fields}
 				onsuccess={onsubmit}
-				oncancel={() => (mode = 'list')}
+				oncancel={onback}
 				bind:value={current}
 				errors={form?.errors}
-				mode="update"
+				{mode}
 			/>
 		</div>
 	{/if}

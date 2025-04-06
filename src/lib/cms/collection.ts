@@ -7,13 +7,13 @@ async function getFormBody(event: any) {
 	return value
 }
 
-async function validate(fields: any, body: any) {
+async function validate(fields: any, body: any, mode = 'insert') {
 	let errors: any = {};
 
 	for (let fieldName in fields) {
 		const field = fields[fieldName];
 
-		if (field.required && !body[fieldName]) {
+		if (mode == 'insert' && field.required && !body[fieldName]) {
 			errors[fieldName] = `${field.label} is required`;
 			continue;
 		}
@@ -41,9 +41,15 @@ async function validate(fields: any, body: any) {
 	}
 }
 
-export function collectionLoad(config: any) {
+export function collectionLoad(config: any, hooks: any = {}) {
+	
 	return async (event: ServerLoadEvent) => {
         const db = event.locals.db
+
+		if(config.type == 'form') {
+			const value = await db(config.name).query().first() ?? {}
+			return { value, config: JSON.parse(JSON.stringify(config)) };
+		}
 
 		// TODO: Think about parameters and return type
 		let query = db(config.name).query()
@@ -59,31 +65,28 @@ export function collectionLoad(config: any) {
 			}
 		}
 
-		if (config.hooks?.beforeLoad) {
-			query = await config.hooks?.beforeLoad?.({ query, context, mode: 'list' });
+		if (hooks.beforeLoad) {
+			query = await hooks.beforeLoad({ query, context });
 		}
 
 		// let items = await query.filter('_deleted', '!=', true).all();
 		let items = await query.all();
 
-		if (config.hooks?.afterLoad) {
-			items = await config.hooks.afterLoad({ mode: 'list', context, value: items });
+		if (hooks.afterLoad) {
+			items = await hooks.afterLoad({ context, value: items });
 		}
 
-		console.log({ items, context, config })
 		return { items, context, config: JSON.parse(JSON.stringify(config)) };
 	}
 }
 
-export function collectionInsert(config: any): Action {
+export function collectionInsert(config: any, hooks: any = {}): Action {
 	return async (event) => {
 		let body = await getFormBody(event)
         const db = event.locals.db
 
-		let states: any = {}
-
-		if (config.hooks?.beforeAction) {
-			body = await config.hooks.beforeAction({ db, mode: 'insert', value: body, states });
+		if (hooks.beforeInsert) {
+			await hooks.beforeInsert({ db, value: body });
 		}
 
 		const validateResult = await validate(config.fields, body)
@@ -92,56 +95,58 @@ export function collectionInsert(config: any): Action {
 
 		let result = await db(config.name).insert(body);
 
-		await config.hooks?.afterAction?.({ db, mode: 'insert', value: result, states });
+		if(hooks.afterInsert) {
+			await hooks.afterInsert({ db, value: result });
+		}
 
 		return true;
 	}
 }
 
-export function collectionUpdate(config: any): Action {
+export function collectionUpdate(config: any, hooks: any = {}): Action {
 	return async (event) => {
 		let body = await getFormBody(event)
         const db = event.locals.db
 
-		const validateResult = await validate(config.fields, body)
+		const validateResult = await validate(config.fields, body, 'update')
 		if (validateResult) return validateResult
 
-		let states: any = {}
-
-		if (config.hooks?.beforeAction) {
-			body = await config.hooks.beforeAction({ db, mode: 'update', value: body, states });
+		if (hooks.beforeUpdate) {
+			await hooks.beforeUpdate({ db, value: body });
 		}
 
 		let result = await db(config.name).update(body);
 
-		await config.hooks?.afterAction?.({ db, mode: 'update', value: result, states });
+		if(hooks.afterUpdate) {
+			await hooks.afterUpdate({ db, value: result });
+		}
 		return true;
 	}
 }
 
-export function collectionRemove(config: any): Action {
+export function collectionRemove(config: any, hooks: any = {}): Action {
 	return async (event) => {
 		let body = await getFormBody(event)
         const db = event.locals.db
 
-		let states: any = {}
-
-		if (config.hooks?.beforeAction) {
-			body = await config.hooks.beforeAction({ db, mode: 'remove', value: body, states });
+		if (hooks.beforeRemove) {
+			await hooks.beforeAction({ db, mode: 'remove', value: body });
 		}
 
 		let result = await db(config.name).update({ ...body, _deleted: true });
 
-		await config.hooks?.afterAction?.({ db, mode: 'remove', value: result, states });
+		if(hooks.afterRemove) {
+			await hooks.afterRemove({ db, mode: 'remove', value: result });
+		}
 
 		return true;
 	}
 }
 
-export function collectionActions(config: any) {
+export function collectionActions(config: any, hooks: any) {
 	return {
-		insert: collectionInsert(config),
-		update: collectionUpdate(config),
-		remove: collectionRemove(config),
+		insert: collectionInsert(config, hooks),
+		update: collectionUpdate(config, hooks),
+		remove: collectionRemove(config, hooks),
 	}
 }

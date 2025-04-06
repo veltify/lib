@@ -86,7 +86,9 @@
 			</div>
 			<div class="col-span-2 flex justify-start gap-4 pt-4">
 				<Button type="submit">Submit</Button>
-				<Button variant="ghost" href={config.backUrl} onclick={oncancel}>Cancel</Button>
+				{#if oncancel}
+					<Button variant="ghost" href={config.backUrl} onclick={oncancel}>Cancel</Button>
+				{/if}
 			</div>
 		{:else if config.form.sections}
 			<Tabs bind:active={activeSection}>
