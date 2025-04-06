@@ -7,6 +7,12 @@
 - Preparing for the next release with theme enhancements
 
 ## Recent Changes
+- Implemented CLI tool for project initialization
+  - Added `npx veltify init` command to create new projects
+  - Implemented project name prompt and validation
+  - Added template repository cloning functionality
+  - Added dependency installation and setup instructions
+  - Included error handling and user-friendly messages
 - Implemented DatePicker component with date range selection support
   - Added dual-month view for date range selection
   - Implemented immediate value updates without apply/cancel buttons

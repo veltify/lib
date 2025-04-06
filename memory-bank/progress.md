@@ -56,6 +56,7 @@
 - ✅ Core UI components created
 - ✅ Dark mode support added
 - ✅ Initial accessibility implementation
+- ✅ CLI tool for project initialization implemented
 
 ## Next Milestones
 - 🔲 Complete theme color audit

@@ -59,65 +59,68 @@
 </script>
 
 <div class="relative w-full" in:fly={{ y: 20 }}>
-	{#if mode === 'list'}
-		<div
-			class="absolute inset-0"
-			in:fly={{ x: -20, duration: 201 }}
-			out:fly={{ x: -20, duration: 201 }}
-		>
-			<PageHeader title={config.plural}>
-				<Button variant="primary" onclick={() => openInsert()}>
-					<Icon {icons} name="lucideCirclePlus" />
-					Add New {config.singular}
-				</Button>
-			</PageHeader>
-
-			<DynamicTable {fields} context={data.context} items={data.items} {config}>
-				{#snippet empty()}
-					<!-- <img src="/icons/empty-state.svg" alt="No data" class="mb-4 h-24 w-24" /> -->
-					<h2 class="text-content/80 text-xl font-semibold">No records found</h2>
-					<p class="text-muted mt-2 mb-6 text-sm">
-						It seems there is no data available. Click "Add New {config.singular}" to create a new
-						record.
-					</p>
-					<Button onclick={() => openInsert()}>
-						<Icon name="lucideCirclePlus" />
+	{#key data.config}
+		{#if mode === 'list'}
+			<div
+				class="absolute inset-0"
+				in:fly={{ x: -20, duration: 201 }}
+				out:fly={{ x: -20, duration: 201 }}
+			>
+				<PageHeader title={config.plural}>
+					<Button variant="primary" onclick={() => openInsert()}>
+						<Icon {icons} name="lucideCirclePlus" />
 						Add New {config.singular}
 					</Button>
-				{/snippet}
-				{#snippet actions(item)}
-					<Button variant="secondary" onclick={() => openEdit(item)}>Edit</Button>
-					<Button variant="destructive" onclick={() => openDeleteConfirm(item)}>Delete</Button>
-				{/snippet}
-			</DynamicTable>
+				</PageHeader>
 
-			<DeleteConfirm bind:open={confirmOpen} id={current?.id} {onclose} />
-		</div>
-	{:else}
-		<div
-			class="absolute inset-0"
-			in:fly={{ x: 20, duration: 201 }}
-			out:fly={{ x: 20, duration: 201 }}
-		>
-			{#if mode == 'insert'}
-				<PageHeader {onback} title="Add New {config.singular}" />
-			{:else}
-				<PageHeader {onback} title="Update {config.singular}" />
-			{/if}
-			<DynamicForm
-				config={{
-					fields: config.fields,
-					form: config.form,
-					context: data.context
-				}}
-				{fields}
-				onsuccess={onsubmit}
-				oncancel={onback}
-				bind:value={current}
-				errors={form?.errors}
-				{mode}
-			/>
-		</div>
-	{/if}
+				<DynamicTable {fields} context={data.context} items={data.items} {config}>
+					{#snippet empty()}
+						<!-- <img src="/icons/empty-state.svg" alt="No data" class="mb-4 h-24 w-24" /> -->
+						<h2 class="text-content/80 text-xl font-semibold">No records found</h2>
+						<p class="text-muted mt-2 mb-6 text-sm">
+							It seems there is no data available. Click "Add New {config.singular}" to create a new
+							record.
+						</p>
+						<Button onclick={() => openInsert()}>
+							<Icon name="lucideCirclePlus" />
+							Add New {config.singular}
+						</Button>
+					{/snippet}
+					{#snippet actions(item)}
+						<Button variant="secondary" onclick={() => openEdit(item)}>Edit</Button>
+						<Button variant="destructive" onclick={() => openDeleteConfirm(item)}>Delete</Button>
+					{/snippet}
+				</DynamicTable>
+
+				<DeleteConfirm action="remove" bind:open={confirmOpen} id={current?.id} {onclose} />
+			</div>
+		{:else}
+			<div
+				class="absolute inset-0"
+				in:fly={{ x: 20, duration: 201 }}
+				out:fly={{ x: 20, duration: 201 }}
+			>
+				{#if mode == 'insert'}
+					<PageHeader {onback} title="Add New {config.singular}" />
+				{:else}
+					<PageHeader {onback} title="Update {config.singular}" />
+				{/if}
+				<DynamicForm
+					config={{
+						fields: config.fields,
+						form: config.form,
+						context: data.context
+					}}
+					{fields}
+					onsuccess={onsubmit}
+					oncancel={onback}
+					bind:value={current}
+					errors={form?.errors}
+					{mode}
+				/>
+			</div>
+		{/if}
+	
+	{/key}
 	<div class="h-12"></div>
 </div>
