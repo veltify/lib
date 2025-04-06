@@ -1,5 +1,11 @@
 # lib
 
+## 0.2.4
+
+### Patch Changes
+
+- 77ba748: update
+
 ## 0.2.3
 
 ### Patch Changes
