@@ -1,5 +1,11 @@
 # lib
 
+## 0.2.3
+
+### Patch Changes
+
+- be81394: Update collection manager
+
 ## 0.2.2
 
 ### Patch Changes
