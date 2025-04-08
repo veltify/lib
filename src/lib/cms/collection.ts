@@ -66,14 +66,14 @@ export function collectionLoad(config: any, hooks: any = {}) {
 		}
 
 		if (hooks.beforeLoad) {
-			query = await hooks.beforeLoad({ query, context });
+			await hooks.beforeLoad({ query, context });
 		}
 
 		// let items = await query.filter('_deleted', '!=', true).all();
 		let items = await query.all();
 
 		if (hooks.afterLoad) {
-			items = await hooks.afterLoad({ context, value: items });
+			await hooks.afterLoad({ context, value: items });
 		}
 
 		return { items, context, config: JSON.parse(JSON.stringify(config)) };
@@ -108,18 +108,45 @@ export function collectionUpdate(config: any, hooks: any = {}): Action {
 		let body = await getFormBody(event)
         const db = event.locals.db
 
-		const validateResult = await validate(config.fields, body, 'update')
-		if (validateResult) return validateResult
+		if(config.type == 'form') {
 
-		if (hooks.beforeUpdate) {
-			await hooks.beforeUpdate({ db, value: body });
+			// insert for first time
+			const data = await db(config.name).query().first()
+			if (hooks.beforeUpdate) {
+				await hooks.beforeUpdate({ db, value: body });
+			}
+			let result;
+			if(data) {
+				const validateResult = await validate(config.fields, body)
+				if (validateResult) return validateResult
+	
+				body.id = data.id
+				result = await db(config.name).update(body)
+			} else {
+				const validateResult = await validate(config.fields, body, 'update')
+				if (validateResult) return validateResult
+	
+				result = await db(config.name).insert(body)
+			}
+
+			if(hooks.afterUpdate) {
+				await hooks.afterUpdate({ db, value: result });
+			}
+		} else {
+			const validateResult = await validate(config.fields, body, 'update')
+			if (validateResult) return validateResult
+
+			if (hooks.beforeUpdate) {
+				await hooks.beforeUpdate({ db, value: body });
+			}
+
+			let result = await db(config.name).update(body);
+
+			if(hooks.afterUpdate) {
+				await hooks.afterUpdate({ db, value: result });
+			}
 		}
 
-		let result = await db(config.name).update(body);
-
-		if(hooks.afterUpdate) {
-			await hooks.afterUpdate({ db, value: result });
-		}
 		return true;
 	}
 }
