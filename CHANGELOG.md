@@ -1,5 +1,11 @@
 # lib
 
+## 0.2.5
+
+### Patch Changes
+
+- f2bef73: update collection
+
 ## 0.2.4
 
 ### Patch Changes

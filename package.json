@@ -1,6 +1,6 @@
 {
 	"name": "veltify",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"bin": "./dist/bin.js",
 	"publishConfig": {
 		"access": "public"
